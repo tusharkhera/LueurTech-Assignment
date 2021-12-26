@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=50, required=True)
-    last_name = forms.CharField(max_length=50, required=True)
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':''}))
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class':''}))
-    email = forms.CharField(required=True, widget=forms.EmailInput(attrs={'class':''}))
+    # first_name = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
+    # last_name = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
+    email = forms.CharField(required=True, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
     class Meta :
         model = User
-        fields = ['username','first_name', 'last_name', 'email', 'password1', 'password2']
-        labels = {'email': 'Email', 'first_name':'First Name', 'last_name':'Last Name'}
-        widgets = {'username': forms.TextInput(attrs={'class':''})}
+        fields = ['username', 'email', 'password1', 'password2']
+        labels = {'email': 'Email'}
+        widgets = {'username': forms.TextInput(attrs={'placeholder': 'Username'})}
