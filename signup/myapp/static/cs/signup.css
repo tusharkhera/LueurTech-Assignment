@@ -21,7 +21,7 @@
 .container-form {
     border-top: 1rem solid purple;
     background-color: white;
-    width: fit-content;
+    width: min-content;
     margin: 5rem auto;
     padding: 2rem;
     display: flex;
@@ -51,6 +51,7 @@
 .errors {
     color: red;
     font-size: 16px;
+    text-align: justify;
 }
 
 #sub-button {
